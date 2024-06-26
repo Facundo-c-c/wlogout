@@ -232,6 +232,12 @@ static gboolean get_layout_path()
         free(buf);
         return FALSE;
     }
+    else if (access("/usr/share/defaults/wlogout/layout", F_OK) != -1)
+    {
+        layout_path = "/usr/share/defaults/wlogout/layout";
+        free(buf);
+        return FALSE;
+    }
     else
     {
         free(buf);
@@ -293,6 +299,12 @@ static gboolean get_css_path()
     else if (access("/usr/local/etc/wlogout/style.css", F_OK) != -1)
     {
         css_path = "/usr/local/etc/wlogout/style.css";
+        free(buf);
+        return FALSE;
+    }
+    else if (access("/usr/share/defaults/wlogout/style.css", F_OK) != -1)
+    {
+        css_path = "/usr/share/defaults/wlogout/style.css";
         free(buf);
         return FALSE;
     }

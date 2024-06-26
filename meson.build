@@ -79,6 +79,6 @@ endif
 
 install_subdir('assets', install_dir : datadir / 'wlogout')
 install_subdir('icons', install_dir : datadir / 'wlogout')
-install_data(['layout', 'style.css'], install_dir : sysconfdir / 'wlogout')
+install_data(['layout', 'style.css'], install_dir : '/usr/share/defaults/wlogout')
 
 executable('wlogout', 'main.c', dependencies : [gtk, layershell], install : true)
